@@ -148,16 +148,16 @@
 }
 
 {
-  function foo() {
-    setTimeout(() => {
-      console.log(this);
-      console.log("id:", this.id);
-    }, 100);
-  }
-
-  foo.call({
-    id: 42
-  });
+  // function foo() {
+  //   setTimeout(() => {
+  //     console.log(this);
+  //     console.log("id:", this.id);
+  //   }, 0);
+  // }
+  //
+  // foo.call({
+  //   id: 42
+  // });
 }
 
 {
@@ -171,4 +171,63 @@
   }
   var p = new Person();
 
+}
+
+
+{
+  // function foo() {
+  //   setTimeout(() => {
+  //     console.log("id:", this.id);
+  //   }, 100);
+  // }
+  //
+  // var id = 21; // 加入这行
+  //
+  // foo.call({
+  //   id: 42
+  // });
+
+}
+
+{
+  console.log('==========================');
+
+  function foo() {
+    return () => {
+      return () => {
+        return () => {
+          console.log("id:", this.id);
+        };
+      };
+    };
+  }
+
+  var f = foo.call({
+    id: 11
+  });
+  var t1 = f.call({
+    id: 22
+  })()();
+  var t2 = f().call({
+    id: 33
+  })();
+  var t3 = f()().call({
+    id: 44
+  });
+
+}
+
+{
+
+  var param = 10;
+
+  function test() {
+    console.log(this);
+    setTimeout(function() {
+      console.log(this.param);
+    }, 1000);
+  }
+  test.apply({
+    param: 100
+  })
 }
