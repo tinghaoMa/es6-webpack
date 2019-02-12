@@ -6,4 +6,6 @@
 // import "./src/proxy"
 // test()
 
-import adapter from './src/Adapter'
+// import adapter from './src/Adapter'
+
+import './src/util'
