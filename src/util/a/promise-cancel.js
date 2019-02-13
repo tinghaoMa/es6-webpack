@@ -1,3 +1,9 @@
+/*
+ * Promise是一种链式的回调，
+ * 每一个then或者catch返回的是一个已经处理过的promise对象，
+ * 同时catch只能catch之前链条中出现的错误。
+ */
+
 {
   function race(p) {
     let obj = {};
