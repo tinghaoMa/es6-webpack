@@ -25,3 +25,39 @@
   console.log(values.next());
   console.log(values.next());
 }
+
+{
+  function test({
+    fn
+  }) {
+    fn();
+  }
+
+  const obj = {
+    name: 'hello',
+    fn: () => {
+      console.log('结构赋值传参');
+    }
+  }
+  test(obj)
+
+}
+
+{
+  console.log('扩展运算符 必须放在最后一个参数');
+  let [first, ...arr] = [1, 2, 3, 4, 5, 6]
+  console.log(first);
+  console.log(arr);
+
+
+  // let [...aar, last] = [1, 2, 3, 4, 5, 6]
+
+  console.log('剩余运算符');
+
+  function print(...params) {
+    console.log(params);
+  }
+
+  print(1, 2, 3, 4, 5, 6, 7)
+
+}
