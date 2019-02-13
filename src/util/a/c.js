@@ -1,3 +1,9 @@
+import y from './d';
+import {
+  x
+} from './d';
+
+
 {
   // let controller = {
   //   a: 100,
@@ -88,11 +94,6 @@
   obj.func()
 }
 
-
-
-
-
-
 {
 
   let arr = [{
@@ -111,4 +112,13 @@
     console.log(obj.a);
   }
 
+}
+
+{
+  console.log('export {<变量>}导出的是一个变量的引用，export default导出的是一个值');
+  console.log(`x = ${x} y = ${y}`);
+  setTimeout(() => {
+    console.log('y的值不会发生变化');
+    console.log(`x = ${x} y = ${y}`);
+  }, 1000)
 }
