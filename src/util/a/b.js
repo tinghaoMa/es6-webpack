@@ -63,6 +63,34 @@ import defer from './defer';
   }
 
   console.log(Object.keys(obj));
+
+  const object1 = {
+    a: 1,
+    b: 2,
+    c: 3
+  };
+
+  const object2 = Object.assign({
+    c: 4,
+    d: 5,
+    test: function() {
+      console.log('Object.assign test');
+    }
+  }, object1);
+
+  console.log(object2.c, object2.d);
+  console.log(object2);
+  console.log(object1);
+  object2.test();
+  const object3 = Object.assign({}, {
+    sucess: (param) => {
+      console.log('sucess');
+    },
+    fail: () => {
+      console.log('fail');
+    }
+  })
+  console.log(object3);
 }
 
 {
@@ -94,6 +122,24 @@ import defer from './defer';
     console.log(value);
   }).catch((err) => {
     console.log(err);
+  })
+
+}
+
+
+{
+  Promise.resolve('param').then((value) => {
+    console.log('111111');
+    console.log(value);
+    return value;
+  }).then((value) => {
+    console.log('2222222');
+    console.log(value);
+  }).then((value) => {
+    console.log('333333');
+    console.log(value);
+  }).catch((err) => {
+    console.log('error');
   })
 
 }
