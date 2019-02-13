@@ -61,3 +61,29 @@
   print(1, 2, 3, 4, 5, 6, 7)
 
 }
+
+{
+  // 省略的是属性名而不是值
+  // 值必须是一个变量
+  let bar = {
+    x: 10,
+    y: 10,
+    z: 100
+  }
+
+  let {
+    x: x,
+    y,
+    z
+  } = bar
+
+  console.log(`x = ${x} y = ${y} z = ${z}`);
+
+  let obj = {
+    func() {
+      console.log('方法名称简写');
+    }
+
+  }
+  obj.func()
+}
