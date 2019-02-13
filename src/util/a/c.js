@@ -87,3 +87,28 @@
   }
   obj.func()
 }
+
+
+
+
+
+
+{
+
+  let arr = [{
+    a: 1
+  }, {
+    a: 2
+  }, {
+    a: 3
+  }, {
+    a: 4
+  }]
+  let obj = {}
+  for ({
+      a: obj.a
+    } of arr) {
+    console.log(obj.a);
+  }
+
+}
