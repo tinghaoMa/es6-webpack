@@ -135,3 +135,35 @@ import {
 
   func()
 }
+
+
+
+
+
+
+
+{
+  //第一个参数x 如果取不到就会赋默认值10 第二个参数y 如果取不到就就取不到了 不会再次赋值
+  function func({
+    x = 10
+  } = {}, {
+    y
+  } = {
+    y: 10
+  }) {
+    console.log(`函数的结构赋值  x = ${x} y = ${y}`);
+  }
+
+  func({}, {}) //x = 10 y = undefined
+  func(undefined, {}) //x = 10 y = undefined
+  func(undefined, undefined) // x = 10 y = 10
+  func() // x = 10 y = 10
+  func({
+    x: 1
+  }, {
+    y: 2
+  }) //x = 1 y = 2
+
+
+
+}
