@@ -167,3 +167,23 @@ import {
 
 
 }
+
+{
+
+  let obj = {};
+  obj = new Proxy(obj, {
+    set(target, key, val) {
+      console.log('oops');
+      return Reflect.set(target, key, val);
+    }
+  })
+
+  obj.foo = 'bar'
+  console.log(obj);
+
+
+
+
+
+
+}
