@@ -122,3 +122,16 @@ import {
     console.log(`x = ${x} y = ${y}`);
   }, 1000)
 }
+
+{
+  let w = 10
+  let z = 10
+
+  function func(x = w + 1, y = x + 1, z = z + 1) {
+    console.log(`segg6575 x=${x} y =${y} z = ${z}`);
+    console.log('z 相当于 let z= z+1 会先去计算z+1 违反原则 可以理解为没有定义就使用');
+  }
+
+
+  func()
+}
