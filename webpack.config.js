@@ -6,7 +6,6 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: ['babel-polyfill', './index.js'],
   devServer: {
-    contentBase: './dist',
     hot: true,
     compress: true,
     port: 9000,
@@ -21,7 +20,16 @@ module.exports = {
       }, {
         test: /\.js$/,
         loader: 'babel-loader'
-      }]
+      }],
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
