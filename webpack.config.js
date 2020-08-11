@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
-  entry: ['babel-polyfill','./index.js'],
+  entry: ['babel-polyfill', './index.js'],
   devServer: {
     contentBase: './dist',
     hot: true,
@@ -22,15 +22,15 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader'
       }]
-    },
-    plugins: [
-      new CleanWebpackPlugin(['dist']),
-      new HtmlWebpackPlugin({template: './index.html'}),
-      new webpack.NamedModulesPlugin(),
-      new webpack.HotModuleReplacementPlugin()
-    ],
-    output: {
-      filename: 'index.js',
-      path: path.resolve(__dirname, 'dist')
-    }
-  };
+  },
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({ template: './index.html' }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
