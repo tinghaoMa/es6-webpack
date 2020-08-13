@@ -8,4 +8,4 @@
 
 // import adapter from './src/Adapter'
 
-import './src/util/d'
+import './src/util/g'
